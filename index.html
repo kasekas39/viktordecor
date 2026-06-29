@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Viktor Painting & Decorating - Premium, high-quality painting services with over 20 years of experience. Fully insured, flexible schedules, and exceptional craftsmanship.">
+    <title>Viktor | Luxury Painting & Decorating</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Local CSS Link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo" id="header-logo">
+                <span class="gold-text">V</span>IKTOR
+                <span class="logo-sub">DECOR</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link">Our Work</a></li>
+                    <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="#contact" class="btn btn-outline gold-border">Free Quote</a>
+                <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <!-- Background Decor: Golden Painted Trail and Roller SVG -->
+        <div class="hero-bg-graphic">
+            <svg viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" class="bg-svg">
+                <!-- Golden paint stroke -->
+                <path d="M-100 150 C 400 100, 700 350, 1600 200 L 1600 0 L -100 0 Z" fill="url(#gold-gradient-bg)" opacity="0.08" />
+                <path id="paint-trail" class="paint-path" d="M1500 100 C 1100 120, 800 280, -200 250" stroke="url(#gold-gradient-stroke)" stroke-width="80" stroke-linecap="round" fill="none" opacity="0.15" />
+                
+                <!-- Painting Roller SVG -->
+                <g id="painting-roller" class="roller-graphic">
+                    <!-- Roller frame -->
+                    <path d="M 0 0 L -30 20 L -30 80 L -10 90 L -10 160" stroke="#d4af37" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" fill="none" />
+                    <!-- Roller handle -->
+                    <rect x="-16" y="160" width="12" height="60" rx="3" fill="#1e1e1e" stroke="#d4af37" stroke-width="2" />
+                    <!-- Roller sleeve cylinder -->
+                    <rect x="-80" y="-30" width="160" height="60" rx="10" fill="url(#gold-gradient-roller)" />
+                    <!-- Dripping paint droplets -->
+                    <circle cx="-50" cy="40" r="4" fill="#d4af37" opacity="0.8" />
+                    <circle cx="20" cy="50" r="5" fill="#d4af37" opacity="0.8" />
+                </g>
+
+                <defs>
+                    <linearGradient id="gold-gradient-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#aa7c11" />
+                        <stop offset="50%" stop-color="#d4af37" />
+                        <stop offset="100%" stop-color="#f3e5ab" />
+                    </linearGradient>
+                    <linearGradient id="gold-gradient-stroke" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#aa7c11" />
+                        <stop offset="50%" stop-color="#d4af37" />
+                        <stop offset="100%" stop-color="#f3e5ab" />
+                    </linearGradient>
+                    <linearGradient id="gold-gradient-roller" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#8a5a00" />
+                        <stop offset="30%" stop-color="#d4af37" />
+                        <stop offset="70%" stop-color="#f3e5ab" />
+                        <stop offset="100%" stop-color="#aa7c11" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-subtitle gold-text">Master Painting & Decorating</span>
+                <h1 class="hero-title">Crafting Elegant Spaces <br>With <span class="gold-gradient-text">Precision</span></h1>
+                <p class="hero-description">
+                    Viktor brings professional painting and high-end decorating services to residential and commercial properties. We transform walls with flawless finishes, luxury materials, and an eye for detail.
+                </p>
+                
+                <div class="hero-badges">
+                    <div class="hero-badge">
+                        <span class="badge-icon">✓</span>
+                        <span class="badge-text">20 Years Experience</span>
+                    </div>
+                    <div class="hero-badge">
+                        <span class="badge-icon">✓</span>
+                        <span class="badge-text">Premium Quality Finish</span>
+                    </div>
+                    <div class="hero-badge">
+                        <span class="badge-icon">✓</span>
+                        <span class="badge-text">Fully Insured & Licensed</span>
+                    </div>
+                    <div class="hero-badge">
+                        <span class="badge-icon">✓</span>
+                        <span class="badge-text">Flexible Hours</span>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary gold-bg">Book Free Estimate</a>
+                    <a href="#portfolio" class="btn btn-secondary">Explore Our Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Quality Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle gold-text">Why Choose Viktor</span>
+                <h2 class="section-title">Our Premium Standards</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">
+                    We deliver unmatched quality by combining premium materials, decades of experience, and a clean, reliable workflow.
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- SVG Paint Palette -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="icon-svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 9.5 20.5 7.5 18.5 6.5C18 4 15.5 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
+                            <circle cx="7.5" cy="10.5" r="1.5" fill="currentColor"/>
+                            <circle cx="11.5" cy="7.5" r="1.5" fill="currentColor"/>
+                            <circle cx="16.5" cy="9.5" r="1.5" fill="currentColor"/>
+                            <circle cx="15.5" cy="14.5" r="1.5" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">20 Years Experience</h3>
+                    <p class="feature-desc">Refined craft and perfected techniques ensure crisp lines, smooth coats, and pristine results in every project.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- SVG Quality badge -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="icon-svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">High Quality Finishes</h3>
+                    <p class="feature-desc">We exclusively utilize luxury paint brands and state-of-the-art preparation tools for durability and beauty.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- SVG Shield (Fully Insured) -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="icon-svg">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Fully Insured</h3>
+                    <p class="feature-desc">Complete peace of mind. We are fully covered with comprehensive liability insurance for both domestic and commercial jobs.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- SVG Calendar/Clock (Flexible) -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="icon-svg">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Flexible & Reliable</h3>
+                    <p class="feature-desc">We fit seamlessly around your schedule, offering evening and weekend service to minimize disruption to your daily life.</p>
+                </div>
+            </div>
+
+            <!-- Detailed Services Cards -->
+            <div class="services-grid">
+                <div class="service-box">
+                    <div class="service-img-overlay"></div>
+                    <div class="service-info">
+                        <span class="service-num gold-text">01</span>
+                        <h4 class="service-name">Interior Decorating</h4>
+                        <p class="service-text">From intricate feature walls and luxury wallpaper hanging to crisp coving, doors, and wooden trim painting.</p>
+                    </div>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-img-overlay"></div>
+                    <div class="service-info">
+                        <span class="service-num gold-text">02</span>
+                        <h4 class="service-name">Exterior Protection</h4>
+                        <p class="service-text">Weatherproof exterior painting for masonry, woodwork, sash windows, metal gates, and fascias with long-lasting coatings.</p>
+                    </div>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-img-overlay"></div>
+                    <div class="service-info">
+                        <span class="service-num gold-text">03</span>
+                        <h4 class="service-name">Cabinet Refinishing</h4>
+                        <p class="service-text">Give outdated wooden kitchen cabinets and bespoke built-in wardrobes a factory-smooth, durable spray-paint finish.</p>
+                    </div>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-img-overlay"></div>
+                    <div class="service-info">
+                        <span class="service-num gold-text">04</span>
+                        <h4 class="service-name">Commercial Painting</h4>
+                        <p class="service-text">Fast, clean and professional refurbishments for offices, shops, and restaurants, working flexible out-of-hours shifts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before / After Portfolio Sliders -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle gold-text">Our Portfolio</span>
+                <h2 class="section-title">Before & After Transformations</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">
+                    Drag the gold slider bar on each project to see the dramatic difference between the original space and Viktor's finished paintwork.
+                </p>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Slider 1 -->
+                <div class="portfolio-item-card">
+                    <div class="slider-wrapper">
+                        <!-- Before & After Comparison Slider -->
+                        <div class="comparison-slider" id="slider-living-room">
+                            <!-- After Image (Background) -->
+                            <img src="assets/project_living_room.png" alt="Luxury Living Room After Viktor Paint Job" class="image-after">
+                            
+                            <!-- Before Image (Overlay, clipped dynamically) -->
+                            <div class="image-before-wrapper">
+                                <img src="assets/project_living_room.png" alt="Living Room Before Paint Job" class="image-before">
+                            </div>
+
+                            <!-- Labels -->
+                            <span class="badge-label badge-before">BEFORE</span>
+                            <span class="badge-label badge-after">AFTER</span>
+
+                            <!-- Drag Handle -->
+                            <div class="slider-handle">
+                                <div class="handle-line"></div>
+                                <div class="handle-button">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="handle-arrow">
+                                        <path d="M8 5l-7 7 7 7M16 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                                <div class="handle-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-details">
+                        <h3 class="project-title">1. Luxury Living Room</h3>
+                        <p class="project-desc">Faded wallpaper and damaged trim replaced with custom deep emerald matte finish and bright gold moldings.</p>
+                        <span class="project-meta gold-text">Interior | Farrow & Ball Emerald & Gold</span>
+                    </div>
+                </div>
+
+                <!-- Slider 2 -->
+                <div class="portfolio-item-card">
+                    <div class="slider-wrapper">
+                        <!-- Before & After Comparison Slider -->
+                        <div class="comparison-slider" id="slider-kitchen">
+                            <!-- After Image (Background) -->
+                            <img src="assets/project_kitchen.png" alt="Sleek Navy Blue Kitchen After Viktor Restoration" class="image-after">
+                            
+                            <!-- Before Image (Overlay, clipped dynamically) -->
+                            <div class="image-before-wrapper">
+                                <img src="assets/project_kitchen.png" alt="Kitchen Before Restoration" class="image-before">
+                            </div>
+
+                            <!-- Labels -->
+                            <span class="badge-label badge-before">BEFORE</span>
+                            <span class="badge-label badge-after">AFTER</span>
+
+                            <!-- Drag Handle -->
+                            <div class="slider-handle">
+                                <div class="handle-line"></div>
+                                <div class="handle-button">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="handle-arrow">
+                                        <path d="M8 5l-7 7 7 7M16 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                                <div class="handle-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-details">
+                        <h3 class="project-title">2. Kitchen Cabinet Restoration</h3>
+                        <p class="project-desc">Orange pine cabinets transformed with factory-grade satin navy blue spray-painting and gold hardware.</p>
+                        <span class="project-meta gold-text">Cabinet Spraying | Hardwearing Polyurethane Lacquer</span>
+                    </div>
+                </div>
+
+                <!-- Slider 3 -->
+                <div class="portfolio-item-card">
+                    <div class="slider-wrapper">
+                        <!-- Before & After Comparison Slider -->
+                        <div class="comparison-slider" id="slider-hallway">
+                            <!-- After Image (Background) -->
+                            <img src="assets/project_hallway.png" alt="Luxury Hallway Panel Painting After" class="image-after">
+                            
+                            <!-- Before Image (Overlay, clipped dynamically) -->
+                            <div class="image-before-wrapper">
+                                <img src="assets/project_hallway.png" alt="Hallway Before Panel Painting" class="image-before">
+                            </div>
+
+                            <!-- Labels -->
+                            <span class="badge-label badge-before">BEFORE</span>
+                            <span class="badge-label badge-after">AFTER</span>
+
+                            <!-- Drag Handle -->
+                            <div class="slider-handle">
+                                <div class="handle-line"></div>
+                                <div class="handle-button">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="handle-arrow">
+                                        <path d="M8 5l-7 7 7 7M16 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                                <div class="handle-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-details">
+                        <h3 class="project-title">3. Grand Panel Entrance</h3>
+                        <p class="project-desc">Scuffed walls renovated with bespoke wainscoting paneling painted in high-durability soft light gray.</p>
+                        <span class="project-meta gold-text">Wood Paneling | Little Greene Soft Gray Eggshell</span>
+                    </div>
+                </div>
+
+                <!-- Slider 4 -->
+                <div class="portfolio-item-card">
+                    <div class="slider-wrapper">
+                        <!-- Before & After Comparison Slider -->
+                        <div class="comparison-slider" id="slider-exterior">
+                            <!-- After Image (Background) -->
+                            <img src="assets/project_exterior.png" alt="Stucco House Exterior After Painting" class="image-after">
+                            
+                            <!-- Before Image (Overlay, clipped dynamically) -->
+                            <div class="image-before-wrapper">
+                                <img src="assets/project_exterior.png" alt="Stucco House Exterior Before Painting" class="image-before">
+                            </div>
+
+                            <!-- Labels -->
+                            <span class="badge-label badge-before">BEFORE</span>
+                            <span class="badge-label badge-after">AFTER</span>
+
+                            <!-- Drag Handle -->
+                            <div class="slider-handle">
+                                <div class="handle-line"></div>
+                                <div class="handle-button">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="handle-arrow">
+                                        <path d="M8 5l-7 7 7 7M16 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                                <div class="handle-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-details">
+                        <h3 class="project-title">4. Modern House Exterior</h3>
+                        <p class="project-desc">Faded, weather-worn brick and wood fascia refreshed with thick weatherproof off-white and charcoal trims.</p>
+                        <span class="project-meta gold-text">Exterior Masonry | Dulux Weathershield Smooth Stucco</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle gold-text">Client Testimonials</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">
+                    Read feedback from residential and commercial clients who experienced Viktor's meticulous decorating craftsmanship.
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Viktor painted our entire hallway, stairs, and landing, including extensive wall prep and lining paper. His attention to detail is absolutely second to none. Crisp edges, no dust left behind, and a stunning finish. We've already booked him for our kitchen cabinets next month!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-details">
+                            <h4 class="author-name">Sarah & Mark Higgins</h4>
+                            <span class="author-location gold-text">Residential Client</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Absolutely top tier work. We hired Viktor to repaint our shop front and interior showroom. He was incredibly flexible, working overnight shifts so we didn't have to close during business hours. A true professional who is fully insured, highly skilled, and reliable."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-details">
+                            <h4 class="author-name">Julian Vance</h4>
+                            <span class="author-location gold-text">Owner, Boutique Galleries</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Viktor is a perfectionist. He sprayed our old wood kitchen cabinets and they literally look brand new. The paint coating is smooth as glass and extremely tough. His 20 years of experience clearly shows. I cannot recommend him enough if you want a luxury finish."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-details">
+                            <h4 class="author-name">Eleanor Rose</h4>
+                            <span class="author-location gold-text">Residential Client</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Quote Request Section -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-info-block">
+                <span class="section-subtitle gold-text">Get in Touch</span>
+                <h2 class="section-title">Request a Free Consultation</h2>
+                <p class="contact-intro">
+                    Ready to elevate your property? Fill out the form to request a free site visit and a detailed written quotation. Viktor will get back to you within 24 hours.
+                </p>
+
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div class="contact-item-text">
+                            <span class="contact-label">Call Directly</span>
+                            <a href="tel:07484169695" class="contact-value">07484 169695</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <div class="contact-item-text">
+                            <span class="contact-label">Email Address</span>
+                            <a href="mailto:viktorijo27@gmail.com" class="contact-value">viktorijo27@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div class="contact-item-text">
+                            <span class="contact-label">Areas Covered</span>
+                            <span class="contact-value">London, Surrey, and surrounding areas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insurance-badge-box">
+                    <span class="badge-check">✓</span>
+                    <p><strong>Fully Insured up to £5M</strong> - Public Liability insurance certificate available on request.</p>
+                </div>
+            </div>
+
+            <div class="contact-form-block">
+                <form id="quote-form" class="quote-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="form-name">Full Name</label>
+                            <input type="text" id="form-name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-phone">Phone Number</label>
+                            <input type="tel" id="form-phone" placeholder="07484 169695" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="form-email">Email Address</label>
+                        <input type="email" id="form-email" placeholder="john@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="form-service">Required Service</label>
+                        <select id="form-service" required>
+                            <option value="" disabled selected>Select service type...</option>
+                            <option value="interior">Interior Painting & Decorating</option>
+                            <option value="exterior">Exterior Painting</option>
+                            <option value="cabinets">Kitchen Cabinet Spraying</option>
+                            <option value="commercial">Commercial Decorating</option>
+                            <option value="other">Other / Multi-Service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="form-message">Project Details</label>
+                        <textarea id="form-message" rows="5" placeholder="Please describe the size of the project, walls to be painted, timelines, etc..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block gold-bg" id="submit-btn">
+                        <span>Send Request</span>
+                    </button>
+                    <div id="form-status" class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="gold-text">V</span>IKTOR<span class="logo-sub">DECOR</span>
+                </a>
+                <p class="footer-tagline">20+ years of high-end decorating, delivering beautiful finishes with pride.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Our Work</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <h4>Hours of Operation</h4>
+                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                <p>Saturday: 9:00 AM - 4:00 PM</p>
+                <p class="gold-text">Sunday / Nights: Flexible (By Appointment)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 Viktor Painting & Decorating. All Rights Reserved. Built with Precision.</p>
+                <p class="footer-ins">✓ Fully Insured & Licensed</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Local Script Link -->
+    <script src="script.js"></script>
+</body>
+</html>
