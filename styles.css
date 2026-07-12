@@ -1070,6 +1070,30 @@ a.contact-value:hover {
     color: #f87171;
 }
 
+/* --- Comments Section --- */
+.comments-section {
+    background-color: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.giscus-wrapper {
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+    .giscus-wrapper {
+        padding: 24px;
+    }
+}
+
 /* --- Footer Section --- */
 .main-footer {
     background-color: var(--bg-secondary);

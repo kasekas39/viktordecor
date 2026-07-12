@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Scroll Reveal Animations
     // ==========================================
     const itemsToReveal = document.querySelectorAll(
-        '.feature-card, .service-box, .portfolio-item-card, .testimonial-card, .section-header, .contact-info-block, .contact-form-block'
+        '.feature-card, .service-box, .portfolio-item-card, .testimonial-card, .section-header, .contact-info-block, .contact-form-block, .giscus-wrapper'
     );
     
     // Add the reveal class dynamically to avoid layout shifting on initial render
