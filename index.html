@@ -458,23 +458,72 @@
                     We welcome your questions, feedback, and discussion. Join the conversation below!
                 </p>
             </div>
-            <div class="giscus-wrapper">
-                <div class="giscus"></div>
-                <script src="https://giscus.app/client.js"
-                        data-repo="kasekas39/viktordecor"
-                        data-repo-id="R_kgDOTIblOw"
-                        data-category="Announcements"
-                        data-category-id="DIC_kwDOTIblO84DBBsL"
-                        data-mapping="pathname"
-                        data-strict="0"
-                        data-reactions-enabled="1"
-                        data-emit-metadata="0"
-                        data-input-position="bottom"
-                        data-theme="dark"
-                        data-lang="en"
-                        crossorigin="anonymous"
-                        async>
-                </script>
+            <div class="comments-container">
+                <!-- Comment submission card -->
+                <div class="comment-form-card">
+                    <div class="comment-form-header">
+                        <h3 class="comment-form-title">Leave a Review or Comment</h3>
+                        <p class="comment-form-subtitle">No account or login required. We value your feedback!</p>
+                    </div>
+                    
+                    <form id="comment-form" class="comment-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="comment-author">Your Name *</label>
+                                <input type="text" id="comment-author" placeholder="e.g. John Smith" required maxlength="60">
+                            </div>
+                            <div class="form-group">
+                                <label>Your Rating</label>
+                                <div class="rating-picker-wrapper">
+                                    <div class="rating-picker" id="rating-picker" role="radiogroup" aria-label="Star Rating">
+                                        <button type="button" class="star-btn active" data-rating="1" aria-label="1 star">★</button>
+                                        <button type="button" class="star-btn active" data-rating="2" aria-label="2 stars">★</button>
+                                        <button type="button" class="star-btn active" data-rating="3" aria-label="3 stars">★</button>
+                                        <button type="button" class="star-btn active" data-rating="4" aria-label="4 stars">★</button>
+                                        <button type="button" class="star-btn active" data-rating="5" aria-label="5 stars">★</button>
+                                    </div>
+                                    <span class="rating-label" id="rating-display">5 of 5 Stars</span>
+                                </div>
+                                <input type="hidden" id="comment-rating" value="5">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comment-message">Your Comment or Feedback *</label>
+                            <textarea id="comment-message" rows="4" placeholder="Write your thoughts, experience, or question..." required maxlength="1000"></textarea>
+                        </div>
+
+                        <div class="comment-form-footer">
+                            <button type="submit" class="btn btn-primary" id="comment-submit-btn">
+                                <span>Post Comment</span>
+                                <span class="btn-arrow">→</span>
+                            </button>
+                            <div class="form-status" id="comment-status"></div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Comments Feed Header -->
+                <div class="comments-feed-header">
+                    <div class="feed-title-wrapper">
+                        <h3 class="feed-title">Client Feedback</h3>
+                        <span class="comments-badge" id="comments-count">0</span>
+                    </div>
+                    <button type="button" class="btn-refresh" id="refresh-comments-btn" title="Refresh comments">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="refresh-icon">
+                            <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+                        </svg>
+                        <span>Refresh</span>
+                    </button>
+                </div>
+
+                <!-- Dynamic Comments List Container -->
+                <div class="comments-list" id="comments-list">
+                    <div class="comments-loading">
+                        <div class="comment-spinner"></div>
+                        <p>Loading comments...</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
