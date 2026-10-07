@@ -159,46 +159,111 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // 5. Contact Form Handling (Simulated Submit)
+    // 5. Contact & Booking Form (Supabase + Web3Forms Email)
     // ==========================================
     const quoteForm = document.getElementById('quote-form');
     const submitBtn = document.getElementById('submit-btn');
     const formStatus = document.getElementById('form-status');
+    const WEB3FORMS_ACCESS_KEY = '0fbefa65-2801-4c2f-a188-a1e1f735b786';
 
     if (quoteForm && submitBtn && formStatus) {
-        quoteForm.addEventListener('submit', (e) => {
+        quoteForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            const nameInput = document.getElementById('form-name');
+            const phoneInput = document.getElementById('form-phone');
+            const emailInput = document.getElementById('form-email');
+            const serviceInput = document.getElementById('form-service');
+            const messageInput = document.getElementById('form-message');
+
+            const name = nameInput ? nameInput.value.trim() : '';
+            const phone = phoneInput ? phoneInput.value.trim() : '';
+            const email = emailInput ? emailInput.value.trim() : '';
+            const service = serviceInput ? serviceInput.value : '';
+            const message = messageInput ? messageInput.value.trim() : '';
+
+            if (!name || !phone || !email || !message) {
+                formStatus.className = 'form-status error';
+                formStatus.textContent = 'Please complete all required fields.';
+                return;
+            }
 
             // Disable button and show loading text
             submitBtn.disabled = true;
             const originalBtnHtml = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<span>Processing Request...</span>';
+            submitBtn.innerHTML = '<span>Sending Request...</span>';
             formStatus.className = 'form-status';
             formStatus.textContent = '';
 
-            // Simulate API call delay
-            setTimeout(() => {
-                // Success action
+            try {
+                // 1. Save booking lead into Supabase private bookings table
+                const supabasePromise = fetch(`${SUPABASE_CONFIG.url}/rest/v1/bookings`, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_CONFIG.anonKey,
+                        'Authorization': `Bearer ${SUPABASE_CONFIG.anonKey}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=minimal'
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        phone: phone,
+                        email: email,
+                        service: service,
+                        message: message
+                    })
+                });
+
+                // 2. Dispatch instant email alert to Viktor via Web3Forms
+                const emailPromise = fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        access_key: WEB3FORMS_ACCESS_KEY,
+                        subject: `🔔 New Consultation Request: ${name} (${service})`,
+                        from_name: 'Viktor Decor Website',
+                        name: name,
+                        phone: phone,
+                        email: email,
+                        service: service,
+                        message: message
+                    })
+                });
+
+                const [supaRes, emailRes] = await Promise.allSettled([supabasePromise, emailPromise]);
+
+                // Check if at least one service succeeded
+                const supaSuccess = supaRes.status === 'fulfilled' && supaRes.value.ok;
+                const emailSuccess = emailRes.status === 'fulfilled' && emailRes.value.ok;
+
+                if (supaSuccess || emailSuccess) {
+                    formStatus.className = 'form-status success';
+                    formStatus.textContent = `✓ Thank you, ${name}! Your consultation request has been received. Viktor will contact you within 24 hours.`;
+                    quoteForm.reset();
+
+                    // Fade out success message after 7 seconds
+                    setTimeout(() => {
+                        formStatus.style.transition = 'opacity 1s';
+                        formStatus.style.opacity = '0';
+                        setTimeout(() => {
+                            formStatus.textContent = '';
+                            formStatus.style.opacity = '1';
+                        }, 1000);
+                    }, 7000);
+                } else {
+                    throw new Error('Both database and email submissions failed');
+                }
+            } catch (err) {
+                console.error('Booking submission error:', err);
+                formStatus.className = 'form-status error';
+                formStatus.textContent = 'Unable to send online request. Please call Viktor directly on 07484 169695.';
+            } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnHtml;
-                
-                formStatus.classList.add('success');
-                formStatus.textContent = '✓ Thank you! Viktor will review your project and contact you within 24 hours.';
-                
-                // Clear the form fields
-                quoteForm.reset();
-                
-                // Clear status message after 6 seconds
-                setTimeout(() => {
-                    formStatus.style.transition = 'opacity 1s';
-                    formStatus.style.opacity = '0';
-                    setTimeout(() => {
-                        formStatus.textContent = '';
-                        formStatus.style.opacity = '1';
-                    }, 1000);
-                }, 6000);
-
-            }, 1800);
+            }
         });
     }
 
